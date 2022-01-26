@@ -1,13 +1,13 @@
-use std::collections::HashMap;
+use std::collections::HashSet;
 
 pub fn contains_duplicates(nums: Vec<i32>) -> bool {
-    let mut visited: HashMap<&i32, bool> = HashMap::new();
+    let mut visited: HashSet<&i32> = HashSet::with_capacity(nums.len());
 
     for num in nums.iter() {
-        if visited.contains_key(&num) {
+        if visited.contains(&num) {
             return true;
         } else {
-            visited.insert(&num, false);
+            visited.insert(&num);
         }
     }
     return false;
