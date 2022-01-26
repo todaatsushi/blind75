@@ -1,4 +1,14 @@
+# Py
 .venv/
+
+# JS / TS
 node_modules
 compiled/
 
+# Rust
+debug/
+target/
+
+Cargo.lock
+
+**/*.rs.bk
