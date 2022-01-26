@@ -1,0 +1,21 @@
+{
+  "name": "best_time_to_buy_and_sell_stock",
+  "version": "1.0.0",
+  "description": "[Link]()",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "jest": "^27.4.7",
+    "ts-jest": "^27.1.3"
+  }
+}
