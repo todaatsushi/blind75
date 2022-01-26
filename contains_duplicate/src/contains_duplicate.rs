@@ -1,4 +1,17 @@
-pub fn contains_duplicates(nums: Vec<i32>) -> bool {}
+use std::collections::HashMap;
+
+pub fn contains_duplicates(nums: Vec<i32>) -> bool {
+    let mut visited: HashMap<&i32, bool> = HashMap::new();
+
+    for num in nums.iter() {
+        if visited.contains_key(&num) {
+            return true;
+        } else {
+            visited.insert(&num, false);
+        }
+    }
+    return false;
+}
 
 #[cfg(test)]
 mod tests {
