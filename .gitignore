@@ -1,5 +1,6 @@
 # Py
 .venv/
+__pycache__/
 
 # JS / TS
 node_modules
