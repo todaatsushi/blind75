@@ -7,6 +7,9 @@ Given an integer array nums, find the contiguous subarray (containing at least o
 A subarray is a contiguous part of an array.
 
 Constraints:
+    1 <= nums.length <= 105
+    -104 <= nums[i] <= 104
+
 ```
 
 # Breakdown
@@ -29,13 +32,15 @@ Input: nums = [5,4,-1,7,8]
 Output: 23
 
 ## Brute force
-Compute every contiguous array within `nums` and get the greatest sum.
+Compute every contiguous array within `nums` and get the subtotal of each of those subarrays.
 
-Time: O(N^^2)
-Space: O(N^^2)
+Time: O(N^^3)
+Space: O(1)
 
-We would be performing N operations N times where N is the length of `nums`. The space used to store the subarrays would
-grow with the number of subarrays and, therefore, will also grow at the same rate.
+We would loop through twice (once for the start, once to build the subarray) and finally, another O(N) operation to
+compute the sum.
+
+We wouldn't have to create any new data apart from the pointers that are constant.
 
 ## Possible solutions
 
