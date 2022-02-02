@@ -37,15 +37,32 @@ Compute every contiguous array within `nums` and get the subtotal of each of tho
 Time: O(N^^3)
 Space: O(1)
 
-We would loop through twice (once for the start, once to build the subarray) and finally, another O(N) operation to
-compute the sum.
-
-We wouldn't have to create any new data apart from the pointers that are constant.
+We would loop through twice (once for the start, once to build the subarray) and finally, another O(N)
 
 ## Possible solutions
+- Iterate inwards using 2 pointers at each end
+
+Any sub array is going to, at max, include all elements. Given that the total will only get:
+    - Smaller as we move a positive number out of the scope
+    - Larger as move a negative number out of the scope
+
+We will still have to be careful of the false positive (ie. the larger int followed by a huge negative)
+
+- Iterate outwards
+
+Same problem as above.
+
 
 ## Solution
+Use a variation of a sliding window, more like a runner and chaser instead.
+
+Using those as the two indicies of the subarray, we calculate the total. When adding a new number to the subarray, if
+the total of the prefix is negative, we can discount it as it doesn't contribute to making a new total larger. In that
+case, we can just drop the prefix and move the chaser to the location of the runner.
 
 
-Time: O()
-Space: O()
+Time: O(N)
+Space: O(1)
+
+We only go over the elements of `nums` once, and given we only store the subtotals at any given time, no extra memory is
+needed.
