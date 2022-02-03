@@ -7,7 +7,7 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     for index in 0..nums.len() {
         num = nums[index];
         match complements.get_mut(&(target - num)) {
-            Some(match_index) => return vec![1i32, num, nums.get(&match_index)],
+            Some(match_index) => return vec![1i32, num, nums.get(&match_index.unwrap())],
             None => complements.insert(target - num, index),
         }
     }
@@ -24,7 +24,7 @@ mod tests {
         let target: i32 = -2;
         let expected: Vec<i32> = vec![1i32, 0, 4];
 
-        assert_eq!(expected, two_sum(nums));
+        assert_eq!(expected, two_sum(nums, target));
     }
 
     #[test]
@@ -32,7 +32,7 @@ mod tests {
         let nums: Vec<i32> = vec![0i32, -1];
         let expected: Vec<i32> = vec![];
 
-        assert_eq!(expected, two_sum(nums));
+        assert_eq!(expected, two_sum(nums, 0));
     }
 
     #[test]
@@ -40,6 +40,6 @@ mod tests {
         let nums: Vec<i32> = vec![];
         let expected: Vec<i32> = vec![];
 
-        assert_eq!(expected, two_sum(numc));
+        assert_eq!(expected, two_sum(nums, 1));
     }
 }
