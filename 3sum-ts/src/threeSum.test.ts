@@ -8,15 +8,15 @@ test("Test nums creates an array with the correct results", () => {
 })
 
 test("Empty input returns no results", () => {
-  const nums: Array<Any> = []
-  const expected: Array<Any> = []
+  const nums: Array<number> = []
+  const expected: Array<number> = []
 
   expect(threeSum(nums)).toBe(expected)
 })
 
 test("No answer input returns no results", () => {
-  const nums: Array<Any> = [0]
-  const expected: Array<Any> = []
+  const nums: Array<number> = [0]
+  const expected: Array<number> = []
 
   expect(threeSum(nums)).toBe(expected)
 })
