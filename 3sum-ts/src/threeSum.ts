@@ -32,7 +32,6 @@ const threeSum = (nums: number[]): Array<Array<number>> => {
         for (let solution of combinations) {
           if (checkArrayHasAllElements([nums[left], nums[right], num], solution)) {
             isUnique = false
-          } else {
           }
         }
         if (isUnique) {
@@ -50,4 +49,4 @@ const threeSum = (nums: number[]): Array<Array<number>> => {
   return combinations
 }
  
-console.log(threeSum([-1, 0, 1, 2, -1, -4]))
+export default threeSum
