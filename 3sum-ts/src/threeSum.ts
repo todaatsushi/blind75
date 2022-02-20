@@ -49,4 +49,4 @@ const threeSum = (nums: number[]): Array<Array<number>> => {
   return combinations
 }
  
-export default threeSum
+export { threeSum, checkArrayHasAllElements }
