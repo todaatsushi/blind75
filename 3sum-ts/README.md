@@ -19,10 +19,6 @@ In this case, we have 3 extra considerations:
     - Answers must be unique (ie. no dupe triplets)
     - There are three numbers which must add up to 0
 
-You can rework the formula to mean that a + b = -c, which reformats the problem into multiple 2Sum problems. 
-
-As we are returning the values themselves and not the indicies, we can ensure that we haven't solved the target already.
-
 # Examples
 input: nums = [-1,0,1,2,-1,-4]
 output: [[-1,-1,2],[-1,0,1]]
@@ -46,7 +42,7 @@ For space, the data that grows the most is the result array, the most of would b
 making it grow with the size of the input.
 
 ## Possible solutions
-Loop through `nums` and calculate 2sum on the negative version of that number. We store the target and successful combos
+1) Loop through `nums` and calculate 2sum on the negative version of that number. We store the target and successful combos
 in a map in order to not repeat the solutions. In the case the 2sum is successful and not existing in the map, we add to
 the map and add the Vec to the result.
 
@@ -58,3 +54,11 @@ Space: O(N)
 
 Will need a linear 2sum for every num in `nums` and store those in both a result Vec and also a hashmap, which will have
 all the nums in `nums` at most.
+
+2) Loop through `nums` after sorting it and initialise two pointers on each loop. We can move left, right inwards depending
+on whether the total is too large or too small, ignoring the `num` when either lands on it.
+
+Time: O(N^^2)
+Space: O(N)
+
+The result list will grow with the input in the worst case.
