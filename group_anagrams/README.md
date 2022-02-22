@@ -27,8 +27,16 @@ Output: [["a"]]
 
 ## Brute force
 
-Time: O()
-Space: O()
+Loop over every word in `strs` and compare to every known anagram. If the letter counts match, add to that anagram
+group, else add to a new one.
+
+Time: O(NMA)
+Space: O(N)
+
+Each loop (N) would need to cycle through each anagram group (M) and compare every letter of that word to the first of
+each of those anagram groups (A).
+
+The largest the anagrams could get is the size of `strs`.
 
 ## Possible solutions
 
