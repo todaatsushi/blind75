@@ -38,10 +38,14 @@ each of those anagram groups (A).
 
 The largest the anagrams could get is the size of `strs`.
 
-## Possible solutions
+## Solutions
+1) Sort words and triage based on the results
 
-## Solution
+Iterate over words in `strs` and sort (n log n ) on every word. The resulting words should be the exact same for each
+anagram in the `strs`. We can then compare and add them to their own lists.
 
+Time: O(N^^2 Log N)
+Space: O(N)
 
-Time: O()
-Space: O()
+Every word is sorted which is queried in a hash table and triaged. At the end, we loop and centralise into a results
+list which also scales with the input.
