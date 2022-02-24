@@ -5,7 +5,10 @@ pub struct ListNode {
 
 impl ListNode {
     #[inline]
-    fn new(val: i32) -> Self {
-        ListNode { next: None, val }
+    fn new(val: i32, next: Option<ListNode>) -> Self {
+        ListNode {
+            next: next.unwrap_or(None),
+            val,
+        }
     }
 }
