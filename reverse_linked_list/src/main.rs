@@ -1,5 +1,5 @@
-mod ListNode;
-mod reverse_list;
+mod node;
+mod reverse;
 
 fn main() {
     use reverse_list::reverse_list;
